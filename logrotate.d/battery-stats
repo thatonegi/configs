@@ -1,0 +1,16 @@
+/var/log/battery-stats {
+    rotate 5
+    delaycompress
+    missingok
+    notifempty
+    nocopytruncate
+    nomail
+    weekly
+    postrotate 
+        if which invoke-rc.d >/dev/null 2>&1; then 
+          invoke-rc.d battery-stats restart > /dev/null 
+        else 
+          /etc/init.d/battery-stats restart > /dev/null 
+        fi
+    endscript
+}

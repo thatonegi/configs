@@ -1,0 +1,23 @@
+[connection]
+id=Auto Milwaukie-Library
+uuid=628fdc84-1dbb-42ec-a720-b164ba0e687c
+type=wifi
+permissions=
+secondaries=
+
+[wifi]
+mac-address=B8:EE:65:DC:E5:F9
+mac-address-blacklist=
+mac-address-randomization=0
+mode=infrastructure
+seen-bssids=
+ssid=Milwaukie-Library
+
+[ipv4]
+dns-search=
+method=auto
+
+[ipv6]
+addr-gen-mode=stable-privacy
+dns-search=
+method=auto

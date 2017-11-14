@@ -1,0 +1,23 @@
+[connection]
+id=Auto FredMeyerWiFi
+uuid=6485b140-a74f-4fda-8bc0-be09c44daf53
+type=wifi
+permissions=
+secondaries=
+
+[wifi]
+mac-address=B8:EE:65:DC:E5:F9
+mac-address-blacklist=
+mac-address-randomization=0
+mode=infrastructure
+seen-bssids=
+ssid=FredMeyerWiFi
+
+[ipv4]
+dns-search=
+method=auto
+
+[ipv6]
+addr-gen-mode=stable-privacy
+dns-search=
+method=auto

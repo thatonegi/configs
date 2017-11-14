@@ -1,0 +1,10 @@
+/var/log/cacti/*.log {
+	weekly
+	missingok
+	rotate 52
+	compress
+	notifempty
+	create 640 www-data www-data
+	sharedscripts
+}
+

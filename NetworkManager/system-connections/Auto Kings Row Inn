@@ -1,0 +1,23 @@
+[connection]
+id=Auto Kings Row Inn
+uuid=8c6293fe-9e1b-4502-90df-07b5b8fe2427
+type=wifi
+permissions=
+secondaries=
+
+[wifi]
+mac-address=B8:EE:65:DC:E5:F9
+mac-address-blacklist=
+mac-address-randomization=0
+mode=infrastructure
+seen-bssids=
+ssid=Kings Row Inn
+
+[ipv4]
+dns-search=
+method=auto
+
+[ipv6]
+addr-gen-mode=stable-privacy
+dns-search=
+method=auto

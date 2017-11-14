@@ -1,0 +1,16 @@
+#!/bin/sh
+# This script is run as root just before the greeter is started (Xorg is already running)
+
+logger -i -tag mdm-superinit "Starting..."
+
+# NVIDIA prime support
+primeoffload=/sbin/prime-offload
+if [ -f "$primeoffload" ]; then
+    logger -i -tag mdm-superinit "Running prime-offload..."
+    $primeoffload
+    logger -i -tag mdm-superinit "Finished running prime-offload."
+fi
+
+logger -i -tag mdm-superinit "Finished"
+
+exit 0

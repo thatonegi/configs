@@ -1,0 +1,22 @@
+[connection]
+id=xfinitywifi 2
+uuid=f6602f92-63bc-4c32-aa14-1f1de2ac13f4
+type=wifi
+permissions=
+secondaries=
+
+[wifi]
+mac-address-blacklist=
+mac-address-randomization=0
+mode=infrastructure
+seen-bssids=
+ssid=xfinitywifi
+
+[ipv4]
+dns-search=
+method=auto
+
+[ipv6]
+addr-gen-mode=stable-privacy
+dns-search=
+method=auto

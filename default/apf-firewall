@@ -1,0 +1,8 @@
+# Defaults for apf-firewall initscript
+# sourced by /etc/init.d/apf-firewall
+# installed at /etc/default/apf-firewall by the maintainer scripts
+
+# Configure APF editing /etc/apf-firewall files (conf.apf is the principal config files)
+# Modify to RUN="yes" when you are ready
+RUN="no"
+

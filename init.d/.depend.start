@@ -1,0 +1,35 @@
+TARGETS = rsyslog lvm2-lvmpolld nmbd lvm2-lvmetad uuidd killprocs mintsystem binfmt-support battery-stats irqbalance dbus mysql bind9 thermald autofs hddtemp snmpd ntp single loadcpufreq anacron ssh acpid apache2 bluetooth wicd kerneloops postfix avahi-daemon cpufrequtils cron rsync cups mpd cups-browsed saned smbd plymouth rc.local ondemand grub-common
+INTERACTIVE = apache2
+battery-stats: rsyslog
+irqbalance: rsyslog
+dbus: rsyslog
+mysql: rsyslog
+bind9: rsyslog
+thermald: rsyslog
+autofs: rsyslog
+hddtemp: rsyslog
+snmpd: rsyslog
+ntp: rsyslog
+single: killprocs
+loadcpufreq: rsyslog
+anacron: rsyslog
+ssh: rsyslog
+acpid: rsyslog
+apache2: rsyslog bind9
+bluetooth: rsyslog dbus
+wicd: dbus
+kerneloops: bind9 rsyslog
+postfix: rsyslog bind9 mysql
+avahi-daemon: dbus rsyslog
+cpufrequtils: loadcpufreq
+cron: rsyslog bind9 autofs
+rsync: rsyslog bind9 autofs
+cups: rsyslog
+mpd: autofs bind9
+cups-browsed: rsyslog bind9
+saned: rsyslog dbus
+smbd: nmbd cups
+plymouth: battery-stats rsyslog irqbalance bluetooth dbus mysql bind9 lvm2-lvmpolld thermald wicd nmbd smbd lvm2-lvmetad kerneloops uuidd autofs hddtemp cups postfix mpd snmpd apache2 avahi-daemon cups-browsed ntp saned mintsystem cpufrequtils loadcpufreq anacron cron binfmt-support ssh acpid rsync
+rc.local: battery-stats rsyslog irqbalance bluetooth dbus mysql bind9 lvm2-lvmpolld thermald wicd nmbd smbd lvm2-lvmetad kerneloops uuidd autofs hddtemp cups postfix mpd snmpd apache2 avahi-daemon cups-browsed ntp saned mintsystem cpufrequtils loadcpufreq anacron cron binfmt-support ssh acpid rsync
+ondemand: battery-stats rsyslog irqbalance bluetooth dbus mysql bind9 lvm2-lvmpolld thermald wicd nmbd smbd lvm2-lvmetad kerneloops uuidd autofs hddtemp cups postfix mpd snmpd apache2 avahi-daemon cups-browsed ntp saned mintsystem cpufrequtils loadcpufreq anacron cron binfmt-support ssh acpid rsync
+grub-common: battery-stats rsyslog irqbalance bluetooth dbus mysql bind9 lvm2-lvmpolld thermald wicd nmbd smbd lvm2-lvmetad kerneloops uuidd autofs hddtemp cups postfix mpd snmpd apache2 avahi-daemon cups-browsed ntp saned mintsystem cpufrequtils loadcpufreq anacron cron binfmt-support ssh acpid rsync

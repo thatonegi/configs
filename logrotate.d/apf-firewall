@@ -1,0 +1,9 @@
+/var/log/apfados_log /var/log/apf_log {
+	missingok
+	weekly
+	rotate 7
+	compress
+	postrotate
+	endscript
+}
+

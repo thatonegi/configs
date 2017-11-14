@@ -1,0 +1,27 @@
+[connection]
+id=Auto xfinitywifi
+uuid=016e837f-3a91-401b-beb2-ab93c503c7e6
+type=wifi
+interface-name=wlan0
+permissions=
+secondaries=
+timestamp=1494155295
+
+[wifi]
+cloned-mac-address=B8:EE:65:DE:F5:23
+mac-address=B8:EE:65:DC:E5:F9
+mac-address-blacklist=
+mac-address-randomization=0
+mode=infrastructure
+seen-bssids=00:0D:67:7E:30:2E;00:71:C2:D0:6F:D2;60:02:92:E9:C8:52;4E:7A:8A:8E:3C:08;78:F2:9E:49:77:CA;00:71:C2:58:F2:CA;C0:7C:D1:70:D3:CA;0E:51:A4:16:9E:84;00:0D:67:93:85:7A;0E:51:A4:1F:89:09;00:0D:67:49:AD:7A;C0:7C:D1:61:05:FA;88:AD:43:09:DB:BA;60:02:92:B2:0E:42;D8:97:BA:AC:05:9A;22:86:8C:54:32:58;
+ssid=xfinitywifi
+
+[ipv4]
+dns-search=
+method=auto
+
+[ipv6]
+addr-gen-mode=stable-privacy
+dns-search=
+ip6-privacy=0
+method=auto

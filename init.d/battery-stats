@@ -1,0 +1,72 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          battery-stats
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: start/stop the battery statistics collector
+### END INIT INFO
+#
+# Based on skeleton written by Miquel van Smoorenburg <miquels@cistron.nl>.
+# Modified for Debian GNU/Linux by Ian Murdock <imurdock@gnu.ai.mit.edu>.
+# Modified for battery-stats by Karl E. Jørgensen <karl@jorgensen.com>
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+DAEMON=/usr/sbin/battery-stats-collector
+NAME=battery-stats-collector
+DESC="Battery statistics collector"
+
+# Please use /etc/battery-stats.conf to override these parameters.
+SYS_ARGS="--syslog --output /var/log/battery-stats"
+ARGS="--interval=60 --flush=10 --ignore-missing-battery"
+
+CONFIG=/etc/battery-stats.conf
+
+test -f $DAEMON || exit 0
+
+set -e
+
+if [ -f $CONFIG ]
+then
+    . $CONFIG
+fi
+
+case "$1" in
+  start)
+	echo -n "Starting $DESC: "
+	start-stop-daemon --background --make-pidfile --start --quiet \
+		--pidfile /var/run/$NAME.pid \
+		--exec $DAEMON -- $SYS_ARGS $ARGS
+	echo "$NAME."
+	;;
+  stop)
+	echo -n "Stopping $DESC: "
+	start-stop-daemon --oknodo --stop --quiet --pidfile /var/run/$NAME.pid \
+		--exec $DAEMON
+	echo "$NAME."
+	;;
+  reload|restart|force-reload)
+	#
+	#	If the "reload" option is implemented, move the "force-reload"
+	#	option to the "reload" entry above. If not, "force-reload" is
+	#	just the same as "restart".
+	#
+	echo -n "Restarting $DESC: "
+	start-stop-daemon --stop --quiet --pidfile \
+		/var/run/$NAME.pid --exec $DAEMON
+	sleep 1
+	start-stop-daemon --background --make-pidfile --start --quiet \
+		--pidfile /var/run/$NAME.pid \
+		--exec $DAEMON -- $SYS_ARGS $ARGS
+	echo "$NAME."
+	;;
+  *)
+	N=/etc/init.d/$NAME
+	# echo "Usage: $N {start|stop|restart|reload|force-reload}" >&2
+	echo "Usage: $N {start|stop|restart|force-reload}" >&2
+	exit 1
+	;;
+esac
+
+exit 0

@@ -1,0 +1,10 @@
+RELEASE=18.2
+CODENAME=sonya
+EDITION="Cinnamon 64-bit"
+DESCRIPTION="Linux Mint 18.2 Sonya"
+DESKTOP=Gnome
+TOOLKIT=GTK
+NEW_FEATURES_URL=http://www.linuxmint.com/rel_sonya_cinnamon_whatsnew.php
+RELEASE_NOTES_URL=http://www.linuxmint.com/rel_sonya_cinnamon.php
+USER_GUIDE_URL=help:linuxmint
+GRUB_TITLE=Linux Mint 18.2 Cinnamon 64-bit

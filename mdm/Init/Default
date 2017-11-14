@@ -1,0 +1,49 @@
+#!/bin/sh
+# Run as mdm user just before starting the greeter
+
+PATH="/usr/bin:$PATH"
+OLD_IFS=$IFS
+
+if test -x "/sbin/initctl" ; then
+  /sbin/initctl -q emit login-session-start DISPLAY_MANAGER=mdm
+fi
+
+mdmwhich () {
+  COMMAND="$1"
+  OUTPUT=
+  IFS=:
+  for dir in $PATH
+  do
+    if test -x "$dir/$COMMAND" ; then
+      if test "x$OUTPUT" = "x" ; then
+        OUTPUT="$dir/$COMMAND"
+      fi
+    fi
+  done
+  IFS=$OLD_IFS 
+  echo "$OUTPUT"
+}
+
+sysresources=/etc/X11/Xresources
+
+# merge in defaults
+if [ -f "$sysresources" ]; then
+    xrdb -merge "$sysresources"
+fi
+
+sysmodmap=/etc/X11/Xmodmap
+
+XMODMAP=`mdmwhich xmodmap`
+if [ "x$XMODMAP" != "x" ] ; then
+  if [ -f $sysmodmap ]; then
+    $XMODMAP $sysmodmap
+  fi
+fi
+
+DISPLAY=:0 /usr/bin/syndaemon -d -i 1.0 -t -K -R
+
+# Apply the keyboard configuration from /etc/default/keyboard
+# This is needed on some computers using Logitech USB keyboards
+/usr/bin/mdm-set-keyboard-layout
+
+exit 0

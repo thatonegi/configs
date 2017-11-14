@@ -1,0 +1,14 @@
+# /etc/fstab: static file system information.
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+
+/dev/sda8			/			ext4	errors=remount-ro	0	1
+/tmp				/var/tmp		ext4	bind,defaults,noatime,nodev,noexec,nosuid	0	0
+#Entry for /dev/sda6 :
+UUID=3aad107b-0a40-4e41-832c-f568bfb5825f	/boot	ext4	defaults,noatime,nosuid		0	2
+#Entry for /dev/sda2 :
+UUID=948E-B015			/boot/efi		vfat	umask=0077		0	1
+#Entry for /dev/sda4 :
+UUID=8EAA6803AA67E665		/media/bjohnston/Acer	ntfs	defaults,nodev,nosuid,locale=en_US.UTF-8,uid=1000,gid=29	0	0
+#Entry for /dev/sda7 :
+UUID=d799d3ad-3124-4291-b3fe-daa66132c71c	none	swap	sw			0	0

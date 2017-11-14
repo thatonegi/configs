@@ -1,0 +1,23 @@
+[connection]
+id=Auto safewaywifi
+uuid=d51ec701-ce63-4cc2-bcaa-14e7224ac6f2
+type=wifi
+permissions=
+secondaries=
+
+[wifi]
+mac-address=B8:EE:65:DC:E5:F9
+mac-address-blacklist=
+mac-address-randomization=0
+mode=infrastructure
+seen-bssids=
+ssid=safewaywifi
+
+[ipv4]
+dns-search=
+method=auto
+
+[ipv6]
+addr-gen-mode=stable-privacy
+dns-search=
+method=auto

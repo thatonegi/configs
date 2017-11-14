@@ -1,0 +1,18 @@
+TARGETS = cgmanager virtualbox-guest-utils openvpn samba-ad-dc fail2ban gmediarender ebtables miniupnpd apache-htcacheclean firewalld apf-firewall speech-dispatcher cgproxy sysstat lvm2-lvmpolld nmbd lvm2-lvmetad uuidd battery-stats irqbalance thermald hddtemp snmpd ntp apache2 bluetooth netfilter-persistent wicd kerneloops postfix mpd cups-browsed saned smbd plymouth urandom ufw alsa-utils mysql bind9 autofs avahi-daemon cups sendsigs rsyslog umountnfs.sh hwclock.sh networking umountfs cryptdisks cryptdisks-early umountroot halt reboot
+alsa-utils: mpd
+mysql: postfix
+bind9: fail2ban kerneloops postfix mpd apache2 cups-browsed
+autofs: mpd
+avahi-daemon: mpd cups-browsed saned
+cups: smbd
+sendsigs: battery-stats plymouth alsa-utils virtualbox-guest-utils irqbalance bluetooth mysql openvpn netfilter-persistent samba-ad-dc bind9 fail2ban gmediarender thermald miniupnpd wicd nmbd kerneloops apache-htcacheclean uuidd firewalld autofs hddtemp apf-firewall smbd speech-dispatcher postfix mpd snmpd apache2 avahi-daemon cups-browsed
+rsyslog: battery-stats irqbalance bluetooth mysql openvpn sendsigs bind9 fail2ban gmediarender thermald kerneloops apache-htcacheclean autofs hddtemp speech-dispatcher postfix snmpd apache2 avahi-daemon cups-browsed ntp saned cups
+umountnfs.sh: battery-stats plymouth alsa-utils sendsigs virtualbox-guest-utils irqbalance bluetooth mysql openvpn netfilter-persistent rsyslog samba-ad-dc bind9 fail2ban gmediarender thermald miniupnpd wicd nmbd kerneloops apache-htcacheclean uuidd firewalld autofs hddtemp apf-firewall smbd speech-dispatcher postfix mpd snmpd apache2 avahi-daemon cups-browsed
+hwclock.sh: mysql rsyslog miniupnpd kerneloops uuidd cups-browsed
+networking: umountnfs.sh mysql openvpn samba-ad-dc bind9 fail2ban gmediarender miniupnpd nmbd kerneloops autofs hddtemp apf-firewall smbd postfix mpd snmpd apache2 cups-browsed
+umountfs: battery-stats plymouth alsa-utils umountnfs.sh virtualbox-guest-utils irqbalance bluetooth hwclock.sh mysql openvpn netfilter-persistent samba-ad-dc bind9 fail2ban gmediarender ebtables lvm2-lvmpolld thermald miniupnpd wicd nmbd networking lvm2-lvmetad kerneloops apache-htcacheclean uuidd firewalld autofs hddtemp apf-firewall smbd speech-dispatcher postfix mpd snmpd apache2 avahi-daemon cups-browsed urandom
+cryptdisks: umountfs
+cryptdisks-early: umountfs cryptdisks
+umountroot: umountfs cryptdisks-early cryptdisks
+halt: umountroot
+reboot: umountroot
