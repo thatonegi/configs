@@ -46,12 +46,17 @@ COMMIT
 -A INPUT -p udp -m state --state NEW -m udp --dport 7337 -j ACCEPT
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 7777 -j ACCEPT
 -A INPUT -p udp -m state --state NEW -m udp --dport 7777 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 8000 -j ACCEPT
+-A INPUT -p udp -m state --state NEW -m udp --dport 8000 -j ACCEPT
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 8888 -m comment --comment "kodi httpd" -j ACCEPT
 -A INPUT -p udp -m state --state NEW -m udp --dport 8888 -m comment --comment "kody httpd" -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 9090 -j ACCEPT
+-A INPUT -p udp -m state --state NEW -m udp --dport 9090 -j ACCEPT
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 9091 -j ACCEPT
 -A INPUT -p udp -m state --state NEW -m udp --dport 9091 -j ACCEPT
--A INPUT -p tcp -m state --state NEW -m tcp --dport 42053 -j ACCEPT
--A INPUT -p udp -m state --state NEW -m udp --dport 42053 -j ACCEPT
+-A INPUT -p udp -m state --state NEW -m udp --dport 9777 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m multiport --dport 42053,42054,42055 -j ACCEPT
+-A INPUT -p udp -m state --state NEW -m multiport --dport 42053,42054,42055 -j ACCEPT
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 51413 -j ACCEPT
 -A INPUT -p udp -m state --state NEW -m udp --dport 51413 -j ACCEPT
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 52053 -j ACCEPT
