@@ -2,11 +2,18 @@
 <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
 <service-group>
 
-	<name replace-wildcards="yes">%h</name>
+	<name replace-wildcards="yes">Movie's on %h</name>
 
 	<service>
 		<type>_smb._tcp</type>
 		<port>445</port>
+		<txt-record>path=/Movies</txt-record>
+	</service>
+	
+	<service>
+		<type>_device-info._tcp</type>
+		<port>0</port>
+		<txt-record>model=RackMac</txt-record>
 	</service>
 
 </service-group>

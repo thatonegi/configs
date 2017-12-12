@@ -53,7 +53,6 @@ lpadmin:x:113:bjohnston
 ntp:x:114:
 mlocate:x:115:bjohnston
 ssh:x:116:
-avahi:x:118:bjohnston
 bluetooth:x:119:
 scanner:x:120:saned
 colord:x:121:
@@ -90,3 +89,5 @@ dpolicyadmins:x:993:
 admins:x:992:
 replicators:x:991:
 manager:x:1007:manager
+avahi:x:118:
+avahi-autoipd:x:137:
