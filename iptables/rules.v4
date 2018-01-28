@@ -16,6 +16,7 @@ COMMIT
 -A INPUT -i lo -j ACCEPT
 -A INPUT -p icmp -m icmp --icmp-type any -j ACCEPT
 -A INPUT -d 224.0.0.251/32 -p udp -m udp --dport 5353 -j ACCEPT
+-A INPUT -s 192.168.1.1/24 -d 192.168.1.3/24 -j ACCEPT
 -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -m comment --comment ssh -j ACCEPT
 -A INPUT -p tcp -m state --state NEW -m tcp --dport 25 -m comment --comment smtp -j ACCEPT
