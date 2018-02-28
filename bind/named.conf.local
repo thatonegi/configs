@@ -1,8 +1,17 @@
 //
 // Do any local configuration here
 //
+logging {
+	channel query.log {
+		file "/var/log/named/query.log";
+		severity debug 3;
+	};
+
+	category queries { query.log; };
+
+};
 
 // Consider adding the 1918 zones here, if they are not used in your
 // organization
-//include "/etc/bind/zones.rfc1918";
+include "/etc/bind/zones.rfc1918";
 

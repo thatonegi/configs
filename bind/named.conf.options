@@ -1,7 +1,7 @@
 options {
 	directory "/var/cache/bind";
 
-	   recursion yes;
+	// recursion yes;
 
 	// If there is a firewall between you and nameservers you want
 	// to talk to, you may need to fix the firewall to allow multiple
@@ -12,12 +12,12 @@ options {
 	// Uncomment the following block, and insert the addresses replacing 
 	// the all-0's placeholder.
 
-	//   forwarders {
+	forwarders {
 	// 	8.8.8.8;
 	//	8.8.4.4;
-	//	75.75.75.75;
-	//	75.75.74.74;
-	//   };
+		75.75.75.75;
+		75.75.76.76;
+	};
 
 	//========================================================================
 	// If BIND logs error messages about the root key being expired,
