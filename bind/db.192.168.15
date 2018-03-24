@@ -4,11 +4,11 @@
 $ORIGIN kodyboy.com.
 $TTL	604800
 @	IN	SOA	reliant.kodyboy.com.	hostmaster.kodyboy.com. (
-			 20180427	; Serial
-			 28800		; Refresh
-			 7200		; Retry
-			 604800		; Expire
-			 86400 )	; Negative Cache TTL
+			20180428	; Serial
+			28800		; Refresh
+			7200		; Retry
+			604800		; Expire
+			86400 )		; Negative Cache TTL
 ;
 		IN	NS	ns.kodyboy.com.
 @		IN	A	192.168.15.1
@@ -20,12 +20,11 @@ kodyboy.com.	IN	A	192.168.15.1
 ns		IN	A	192.168.15.1
 kodi		IN	CNAME	reliant
 ;
+192-168-15-10	IN	A	192.168.15.10
 openwrt		IN	A	192.168.15.10
 router		IN	CNAME	openwrt
 ;
 192-168-15-100	IN	A	192.168.15.100
-samsung-s5	IN	CNAME	192-168-15-100
-;
 192-168-15-101	IN	A	192.168.15.101
 192-168-15-102	IN	A	192.168.15.102
 192-168-15-103	IN	A	192.168.15.103
@@ -51,6 +50,7 @@ laura		IN	CNAME	192-168-15-115
 192-168-15-120	IN	A	192.168.15.120
 sam-vera	IN	CNAME	192-168-15-120
 192-168-15-121	IN	A	192.168.15.121
+samsung-s5	IN	CNAME	192-168-15-121
 192-168-15-122	IN	A	192.168.15.122
 192-168-15-123	IN	A	192.168.15.123
 192-168-15-124	IN	A	192.168.15.124
