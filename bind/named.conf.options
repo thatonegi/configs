@@ -1,7 +1,13 @@
 options {
 	directory "/var/cache/bind";
 
-	// recursion yes;
+	recursion yes;
+
+	allow-query { trusted; };
+	allow-recursion { trusted; };
+	allow-query-cache { trusted; };
+
+	statistics-file "/var/log/named/named.stats";
 
 	// If there is a firewall between you and nameservers you want
 	// to talk to, you may need to fix the firewall to allow multiple
@@ -12,18 +18,21 @@ options {
 	// Uncomment the following block, and insert the addresses replacing 
 	// the all-0's placeholder.
 
-	forwarders {
+	// forwarders {
+	//	75.75.75.75;
+	//	75.75.76.76;
 	// 	8.8.8.8;
 	//	8.8.4.4;
-		75.75.75.75;
-		75.75.76.76;
-	};
+	// };
 
 	//========================================================================
 	// If BIND logs error messages about the root key being expired,
 	// you will need to update your keys.  See https://www.isc.org/bind-keys
 	//========================================================================
-	dnssec-validation auto;
+
+	// dnssec-enabled yes;
+	// dnssec-validation auto;
+	dnssec-validation no;
 
 	auth-nxdomain no;    # conform to RFC1035
 	listen-on-v6 { any; };

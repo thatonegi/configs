@@ -1,0 +1,70 @@
+;
+; BIND reverse data file for 192.168.15 zone
+;
+$ORIGIN 15.168.192.in-addr.arpa.
+$TTL    604800
+@       IN      SOA      reliant.kodyboy.com.	hostmaster.kodyboy.com. (
+                         20180427       ; Serial
+                         28800          ; Refresh
+                         7200           ; Retry
+                         604800         ; Expire
+                         86400 )        ; Negative Cache TTL
+;
+	IN	NS      ns.
+1	IN	PTR     ns.kodyboy.com.
+1	IN	PTR     reliant.kodyboy.com.
+1	IN	PTR     kodyboy.com.
+;
+10	IN	PTR     openwrt.kodyboy.com.
+;
+100	IN	PTR     192-168-15-100.kodyboy.com.
+101	IN	PTR     192-168-15-101.kodyboy.com.
+102	IN	PTR     192-168-15-102.kodyboy.com.
+103	IN	PTR     192-168-15-103.kodyboy.com.
+104	IN	PTR     192-168-15-104.kodyboy.com.
+105	IN	PTR     192-168-15-105.kodyboy.com.
+106     IN      PTR     192-168-15-106.kodyboy.com.
+107     IN      PTR     192-168-15-107.kodyboy.com.
+108     IN      PTR     192-168-15-108.kodyboy.com.
+109     IN      PTR     192-168-15-109.kodyboy.com.
+110     IN      PTR     192-168-15-110.kodyboy.com.
+111     IN      PTR     192-168-15-111.kodyboy.com.
+112     IN      PTR     192-168-15-112.kodyboy.com.
+113     IN      PTR     192-168-15-113.kodyboy.com.
+114     IN      PTR     192-168-15-114.kodyboy.com.
+115     IN      PTR     192-168-15-115.kodyboy.com.
+116     IN      PTR     192-168-15-116.kodyboy.com.
+117     IN      PTR     192-168-15-117.kodyboy.com.
+118     IN      PTR     192-168-15-118.kodyboy.com.
+119     IN      PTR     192-168-15-119.kodyboy.com.
+120     IN      PTR     192-168-15-120.kodyboy.com.
+121     IN      PTR     192-168-15-121.kodyboy.com.
+122     IN      PTR     192-168-15-122.kodyboy.com.
+123     IN      PTR     192-168-15-123.kodyboy.com.
+124     IN      PTR     192-168-15-124.kodyboy.com.
+125     IN      PTR     192-168-15-125.kodyboy.com.
+126     IN      PTR     192-168-15-126.kodyboy.com.
+127     IN      PTR     192-168-15-127.kodyboy.com.
+128     IN      PTR     192-168-15-128.kodyboy.com.
+129     IN      PTR     192-168-15-129.kodyboy.com.
+130     IN      PTR     192-168-15-130.kodyboy.com.
+131     IN      PTR     192-168-15-131.kodyboy.com.
+132     IN      PTR     192-168-15-132.kodyboy.com.
+133     IN      PTR     192-168-15-133.kodyboy.com.
+134     IN      PTR     192-168-15-134.kodyboy.com.
+135     IN      PTR     192-168-15-135.kodyboy.com.
+136     IN      PTR     192-168-15-136.kodyboy.com.
+137     IN      PTR     192-168-15-137.kodyboy.com.
+138     IN      PTR     192-168-15-138.kodyboy.com.
+139     IN      PTR     192-168-15-139.kodyboy.com.
+140     IN      PTR     192-168-15-140.kodyboy.com.
+141     IN      PTR     192-168-15-141.kodyboy.com.
+142     IN      PTR     192-168-15-142.kodyboy.com.
+143     IN      PTR     192-168-15-143.kodyboy.com.
+144     IN      PTR     192-168-15-144.kodyboy.com.
+145     IN      PTR     192-168-15-145.kodyboy.com.
+146     IN      PTR     192-168-15-146.kodyboy.com.
+147     IN      PTR     192-168-15-147.kodyboy.com.
+148     IN      PTR     192-168-15-148.kodyboy.com.
+149     IN      PTR     192-168-15-149.kodyboy.com.
+150     IN      PTR     192-168-15-150.kodyboy.com.

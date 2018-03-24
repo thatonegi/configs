@@ -1,17 +1,66 @@
 //
 // Do any local configuration here
 //
+
+zone "kodyboy.com" {
+        type master;
+        file "/etc/bind/db.192.168.15";
+};
+
+zone "15.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/db.15.168.192";
+};
+
+acl "trusted" {
+	192.168.15.0/24;
+	localhost;
+	localnets;
+};
+
+controls {
+	inet 127.0.0.1 allow { localhost; }
+	keys { kodyboy-rndc-key; };
+};
+
+statistics-channels { 
+		inet 192.168.15.1 port 5335 allow { trusted; };
+};
+
 logging {
-	channel query.log {
-		file "/var/log/named/query.log";
-		severity debug 3;
+	channel default {
+		file "/var/log/named/named.log";
+		severity info;
 	};
 
-	category queries { query.log; };
+	channel query {
+		file "/var/log/named/named-query.log";
+		severity info;
+	};
+
+	channel errors {
+		file "/var/log/named/named-error.log";
+		severity error;
+	};
+
+	channel debugging {
+		file "/var/log/named/named-debug.log";
+		severity dynamic; 
+	};
+
+	category default { default; errors; debugging; };
+	category queries { query; };
+	category general { default; errors; debugging; };
+	category client { default; errors; };
+	category config { default; errors; debugging;};
+	category lame-servers { default; };
 
 };
 
 // Consider adding the 1918 zones here, if they are not used in your
 // organization
-include "/etc/bind/zones.rfc1918";
 
+include "/etc/bind/zones.rfc1918";
+include "/etc/bind/rndc.key";
+
+#include "/etc/bind/blacklist.zone";
